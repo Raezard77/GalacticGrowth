@@ -1,0 +1,17 @@
+{
+    "name": "galacticgrowth",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "watch": "clear && concurrently 'pug -w ./pug/index.pug -o ../' 'sass --no-stop-on-error --watch ./scss/:./css/ --style compressed'",
+        "preview": "firefox --new-window ./index.html &",
+        "deploy": "ssh -R 80:localhost:7000 serveo.net"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "concurrently": "^8.2.2"
+    }
+}

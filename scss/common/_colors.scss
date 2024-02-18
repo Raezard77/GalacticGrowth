@@ -1,0 +1,20 @@
+// NOTE: DOC's
+// color shadows -> filter: saturate($dark-saturation);
+
+
+
+:root {
+    --primary-color: #009ddf;
+    --secondary-color: #202337;
+    --accent-color: #FF25BE;
+    --font-color: #C5C6C9;
+    --bg-color: #0A0B0F;
+    --shadow-color: #fff;
+    --debug-border-color: rgb(218, 26, 26);
+}
+
+[data-theme="light"] {
+    --font-color: #0A0B0F;
+    --bg-color: #C5C6C9;
+    --shadow-color: rgba(100, 100, 111, 0.2);
+}

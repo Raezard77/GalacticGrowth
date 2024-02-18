@@ -1,0 +1,14 @@
+-
+    const phVidBg = {
+        "poster":"https://lh3.googleusercontent.com/fife/AAbDypCCcmfh_KJuSD4gJyHIyqiGdDV5yzptYhYdkTaD_kZ51OuLrKBMyA9FNQ3e9rL2x1QPrjnBm4pBdeGByG1zTBPMjA5nvAc8I0DfJAeeN2r4I4mC-ZhyQQtmHT5k6Xw-7AG3MxdWMNryHnWHMGYDFhvw9I6ZHP5FtWASi87nYXzsBmLmRLTojJ-qichBwQ2SkQfyG0JocA72sFQJwL_oHV2daYfJmF2UEmsfInSGRi4te3LAClWCigkh0cxNvhvwSEu-cCFRupXsGKBDYxGqnm_JgfjW-NuFZbwZkgGLB6UMxSiFbqQVy9lUwVmdcRd3byA3dOmcjUQOznf4aitpdd8b7Q4fRnjOdud-1w9gGtpuSITHs2doJ-gMHkMYUY_Tym0iQRLoqr7xv1w68jOGJQkQ9Cxd7nui6oxNhLM3nAJP7_XIAtL7K6bkIzjW4f9znqyXnnNfevuPZQP_ebq2Njhg-1EEz0CCft6asBjwZHDhJ3tbijxEURb7O8wU3PXWDXLc20Dy2Z3M9IGbknZWSyakke5WxCLWK4kISTOrGCVyy73UiLy_AvEVzln5ouNvkCmcgopdLbBCwNjBvq3fLj4ag7nee67v-PzVJBK5UzozzOIRWIY-onCp7hUDu4sNz6VOFgiRJPl8AYQugc7mf6hdJqv9ojvxWlvlsSpwIuSYoVX_X_Cvz1wKZivoB_Bs4l9K325g4OL9QLWL38m2KLgPPcrEDWeLaOAFBpgQSOV9OUe7ATkHEJZRKNboMcdyM7EkgV0D-jR1wrWQWimIxzp2TZ2ruQgkAk5q11cRtdNJrbJ1YbGfdJIFJM_iE2szlVV0XnOuHgjKoUtpAvPhdAFDet6Bl9d9-YZDcWTS5v4HJ_ChC4SQEyW043uYUBuI8ofFuc84Z_SN8-HvAZG4EtT5-7mbJwx4u-kQ4J3Tic33oYUa9nisn20hEUhF7kFKo3zUwdf0rQBtHdqPKnF0lT4qEcrphvHk8W5gVsT6zzs7DJVKrdIlRioa-aBrnAGgVlT6_UsjjaI49nrqa448Fm_L8THcTDlEc_TLj5Nt3a66Eupkf2j2T5YXptEjLguprRan4KmZHLs6RaPDkIkF61-poB5g0ljxYy-W5Qv9aEln03UeLw6uni9zFt_yCeemXShBq-uAPz_DQLhd5YdYRo1JeX7jHRxaYc3q_isMgPwT26S1PfihyLgEshJD5MsW1zGK4V0W-AMaOdZOJZZ2XaTzMzYF5us7WuTSUcsZZ618ewWijOFHL0Xkcjk_qRgnqImBwE535MqDtnkd6KZeswrRA_3CHUM3Q1Wp4nuDsGuio2eT6E9sfnaSLUSEs_wnmwjt5RWOXhiz_D3KBhqpeKMNQBfAJdrX_D2j7JayajGf38g6P3-AzJB4XGnHpdObd5vl5nzEC08cYGyWvD_Rkd0UzoPTyb1j7u7EaQSCBTLiTTJAxHd2_cSUHU20X8WAwVeZejgmnitaGC9rIpR8sJkNmQ-APE5uNahU8j-pNnlLQKJKyqKJHoB-LGsZYGbdQogaM0gHfbkFqZ7BjCHpfcDrBdE=w1920-h968",
+        "webm":"https://drive.google.com/uc?&id=1GOK975ICnvJ_DsIgb1VsqogLnWIdEHHb",
+        "mp4":"https://drive.google.com/uc?&id=1cULU6rPZaaqRbL-RjAR0LkH_Dq0ZF3pY",
+    }
+
+
+
+mixin videoBg()
+        video(autoplay, loop, muted, poster=phVidBg["poster"], class="bg-vid") 
+                source(src=phVidBg["webm"], type="video/webm")
+                source(src=phVidBg["mp4"], type="video/mp4")
+                | Your browser does not support the video tag or the file format of this video.

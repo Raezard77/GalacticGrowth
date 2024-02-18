@@ -1,0 +1,63 @@
+body {
+    // NOTE: Essential for RWD debuggin XD
+    min-height: 100dvh;
+    min-width: 100vw;
+    overflow-x: hidden;
+    // ...
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    // ...
+    font-family: "Orbitron", "Lato", sans-serif;
+    font-size: 1.7rem;
+}
+
+header {
+    // ...
+    height: calc(100dvh - #{$nav-height});
+    width: 100%;
+    // ...
+    position: relative;
+    // ...
+    margin-top: $nav-height;
+}
+
+main {
+    // ...
+    height: 100%;
+    width: 100%;
+    // ...
+    padding: var(--sec-padding);
+    @include flex-position;
+}
+
+section {
+    @include box-styles(
+        $min-width: 100%,
+        $height: calc(100dvh - #{$nav-height}),
+        $bg: var(--bg-color),
+        $clr: var(--font-color),
+        $padding: 2rem,
+        $margin: 0,
+        $border: none,
+        $b-radius: none
+    );
+}
+
+.icon-div {
+    // ...
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+    @include flex-position($display: inline- flex);
+    overflow: hidden;
+    // ...
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    // ...
+    svg path {
+        fill: var(--bg-color--primary-color);
+    }
+    // TODO: Temp Fix
+    svg {
+        height: 90%;
+    }
+}

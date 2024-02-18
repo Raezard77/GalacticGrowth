@@ -1,0 +1,22 @@
+//- ...
+mixin customHead()
+    //- 
+
+
+
+//- ...
+mixin loadScripts(scriptsPath=pagesScriptsPath)
+        script(src=scriptsPath+"debug-tools.js")
+        script(src=scriptsPath+"dark-mode.js")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js")
+        script(src=scriptsPath+"navbar.js")
+        script(src=scriptsPath+"hide-url.js")
+        script(src=scriptsPath+"bg-vid.js")
+
+
+
+//- ...
+mixin textInput(type="text", label="Text", name="text", id="text1")
+    .input-group
+        input(type=type, class="input-field", placeholder=" ", name=name, id=id)
+        label(for=id, class="input-label") #{label}

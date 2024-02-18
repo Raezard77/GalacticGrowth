@@ -1,0 +1,101 @@
+//- DOCs
+    //- image >> PATH must start with either `./` || `/`
+
+
+
+//- Defaults
+- const defImgLogo = 'https://lh3.googleusercontent.com/drive-viewer/AFDK6gMRnbyFy-2E9FOwJM8dPugbCktll7UjD_UchUBBpggBXEer2DCyDn-HbeqSsh_EDQcyZWJHWJBKhAxowxUAZjEfwVVmng=w1920-h939'
+- const defTextLogo = 'logoText'
+mixin defMixinLogo()
+    em LogoMixin
+
+-
+    const defLinksArr = [
+        [
+            {'Account':'#!'},
+            [
+                {'Sign Up':'#!'},
+                {'Log in':'#!'}
+            ]
+        ],
+        [
+            {'News':'#!'},
+            [
+                {'New':'#!'},
+                {'Old':'#'}
+            ]
+        ],
+        {'Contact':'#'},
+        {'About':'#'}
+    ]
+
+
+
+
+//- Logo Nature Type Check Function
+-
+    const typeCheck = logoNode => {
+        if (/.*?(\/[\/\w\.]+)[\s\?]?.*/.test(logoNode)){
+            return 'image'
+        } else if (typeof logoNode == 'string'){
+            if (pug_mixins[logoNode]) {
+                return 'mixin'
+            } else {
+                return 'text'
+            }
+        } else if (logoNode === undefined){
+            return 'empty'
+        } else {
+            return 'invalid'
+        }
+    }
+
+
+
+//- Main Mixin
+mixin navBar(logo, linksArr)
+    nav
+        //- Determining Logo Nature
+        case typeCheck(logo)
+            when 'image'
+            when 'empty'
+                - logo = typeof logo != 'undefined' ? logo : defImgLogo
+                figure#logo-container #[img(src=logo, alt="site's logo")]
+            when 'mixin'
+                - logo = typeof logo != 'undefined' ? logo : `defMixinLogo`
+                +#{logo}()  // Y! jus +logo()?
+            when 'text'
+                - logo = typeof logo != 'undefined' ? logo : defTextLogo
+                #logo-container #[span #{logo}]
+            default
+                #logo-container #[span forgot quotes?]
+
+        //- for styling sake
+        #nav-container
+
+            //- Adding the Links
+            - var linksArr = typeof linksArr != 'undefined' ? linksArr : defLinksArr
+            ul#nav-list
+                each link in linksArr
+                    //- Check if passed "link" is actually a parent
+                    if link.length > 0
+                        li
+
+                            //- check if it's ! a link
+                            if link[0].length > 0
+                                | #{link[0]}
+                            else
+                                a(data-href=link[0][Object.keys(link[0])]) #{Object.keys(link[0])}
+                            ul.nav-dropdown.hidden
+                                each subLink in link[1]
+                                    li
+                                        a(data-href=subLink[Object.keys(subLink)]) #{Object.keys(subLink)}
+                    else
+                        li
+                            a(data-href=link[Object.keys(link)]) #{Object.keys(link)}
+
+
+            //- Mobile Burger Menu
+            #nav-mobile
+                a#burger-menu(data-href="#")
+                    span
