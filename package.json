@@ -4,14 +4,15 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "watch": "clear && concurrently 'pug -w ./pug/index.pug -o ../' 'sass --no-stop-on-error --watch ./scss/:./css/ --style compressed'",
-        "preview": "firefox --new-window ./index.html &",
-        "deploy": "ssh -R 80:localhost:7000 serveo.net"
+        "build": "clear && concurrently 'pug -w ./pug/index.pug -o ./' 'sass --no-stop-on-error --watch ./scss/:./css/ --style compressed --no-source-map'",
+        "preview": "clear && concurrently 'serve -l 3000' 'firefox http://127.0.0.1:3000/ &'",
+        "deploy": "ssh -R 80:localhost:3000 serveo.net"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "concurrently": "^8.2.2"
+        "concurrently": "^8.2.2",
+        "sass": "^1.71.0"
     }
 }
