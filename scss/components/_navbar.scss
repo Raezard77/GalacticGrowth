@@ -144,6 +144,10 @@ header {
     }
 }
 
+.scrolled {
+    @include ele-bg($url: "https://w.wallhaven.cc/full/48/wallhaven-48e67o.jpg");
+    transition: all 200ms linear;
+}
 
 // MQ
 
