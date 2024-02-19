@@ -20,10 +20,11 @@ html(lang="en" data-theme="light")
             +navBar(brandName, linksArr)
             main
                 h1 !{heroTitle}
-        section
-            h2 WIP
-        section
-            h2 WIP
+        section#about
+            #about-txt
+                h2 !{aboutTitle}
+                +aboutTxt()
+            img#about-img(src="./images/sam-suit.jpg", alt="SAM'S PIC")
 
 
         //- ...
