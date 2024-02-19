@@ -1,9 +1,9 @@
-//- DOCs
+//- ... DOCs
     //- image >> PATH must start with either `./` || `/`
 
 
 
-//- Defaults
+//- ... Defaults
 - const defImgLogo = 'https://lh3.googleusercontent.com/drive-viewer/AFDK6gMRnbyFy-2E9FOwJM8dPugbCktll7UjD_UchUBBpggBXEer2DCyDn-HbeqSsh_EDQcyZWJHWJBKhAxowxUAZjEfwVVmng=w1920-h939'
 - const defTextLogo = 'logoText'
 mixin defMixinLogo()
@@ -32,7 +32,7 @@ mixin defMixinLogo()
 
 
 
-//- Logo Nature Type Check Function
+//- ... Logo Nature Type Check Function
 -
     const typeCheck = logoNode => {
         if (/.*?(\/[\/\w\.]+)[\s\?]?.*/.test(logoNode)){
@@ -52,7 +52,7 @@ mixin defMixinLogo()
 
 
 
-//- Main Mixin
+//- ... Main Mixin
 mixin navBar(logo, linksArr)
     nav
         //- Determining Logo Nature
@@ -70,10 +70,10 @@ mixin navBar(logo, linksArr)
             default
                 #logo-container #[span forgot quotes?]
 
-        //- for styling sake
+        //- ... for styling sake
         #nav-container
 
-            //- Adding the Links
+            //- ... Adding the Links
             - var linksArr = typeof linksArr != 'undefined' ? linksArr : defLinksArr
             ul#nav-list
                 each link in linksArr
@@ -95,7 +95,7 @@ mixin navBar(logo, linksArr)
                             a(data-href=link[Object.keys(link)]) #{Object.keys(link)}
 
 
-            //- Mobile Burger Menu
+            //- ... Mobile Burger Menu
             #nav-mobile
                 a#burger-menu(data-href="#")
                     span
