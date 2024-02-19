@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "clear && concurrently 'pug -w ./pug/index.pug -o ./' 'sass --no-stop-on-error --watch ./scss/:./css/ --style compressed --no-source-map'",
+        "build": "clear && concurrently 'pug -w ./pug/pages/ -o ./' 'sass --no-stop-on-error --watch ./scss/:./css/ --style compressed --no-source-map'",
         "preview": "clear && concurrently 'serve -l 3000' 'firefox http://127.0.0.1:3000/ &'",
         "deploy": "ssh -R 80:localhost:3000 serveo.net"
     },

@@ -7,14 +7,16 @@
     --primary-color: #009ddf;
     --secondary-color: #202337;
     --accent-color: #FF25BE;
-    --font-color: #C5C6C9;
-    --bg-color: #0A0B0F;
-    --shadow-color: #fff;
+
+    --font-color: #0A0B0F;
+    --bg-color: #fff;
+    --shadow-color: #202122;
+
     --debug-border-color: rgb(218, 26, 26);
 }
 
 [data-theme="light"] {
-    --font-color: #0A0B0F;
-    --bg-color: #C5C6C9;
-    --shadow-color: rgba(100, 100, 111, 0.2);
+    --font-color: #fff;
+    --bg-color: #0A0B0F;
+    --shadow-color: #ddd9d9;
 }

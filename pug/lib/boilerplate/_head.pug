@@ -1,4 +1,4 @@
-mixin head(title= "My Title", cssPath, customHead)
+mixin head(title= "My Title", cssFile)
         head
             meta(charset="UTF-8")
             meta(http-equiv="X-UA-Compatible", content="IE=edge")
@@ -8,6 +8,6 @@ mixin head(title= "My Title", cssPath, customHead)
             meta(name="keywords", content=keywords)
             meta(name="application-name", content=brandName)
             title= title
-            link(rel="stylesheet", href=cssPath)
+            link(rel="stylesheet", href="./css/"+cssFile)
             link(rel="icon", href=imgLogo)
             +customHead()
