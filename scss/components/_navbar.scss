@@ -44,7 +44,7 @@ header {
                         // fixed-size! - ?
                             padding: 10px 20px 0 20px;
                             line-height: 6.7vh;
-                        color: var(--darkest);
+                        color: var(--white-color);
                         font-weight: bold;
 
                         &::before {
@@ -52,7 +52,7 @@ header {
                             height: 5px;
                             content: "";
                             position: absolute;
-                            background-color: transparent;
+                            background-color: var(--primary-color);
                             width: 0%;
                             bottom: 0px;
                         }
@@ -147,6 +147,10 @@ header {
 .scrolled {
     @include ele-bg($url: "https://w.wallhaven.cc/full/48/wallhaven-48e67o.jpg");
     transition: all 200ms linear;
+}
+
+.selected {
+    color: var(--primary-color) !important
 }
 
 // MQ

@@ -28,6 +28,10 @@ main {
     // ...
     padding: var(--sec-padding);
     @include flex-position;
+
+    h1 {
+        margin-top: 8vh;
+    }
 }
 
 section {

@@ -15,9 +15,35 @@
             this.classList.toggle("active")
         })
         $(document).scroll(function () {
-            const $nav = $("header nav")
-            const $header = $("header")
-            $nav.toggleClass("scrolled", $(this).scrollTop() > $header.height() - ($header.height() / 10))
+            $("nav").toggleClass("scrolled", $(this).scrollTop() > 500)
+            // $("header").height() - ($("header").height() / 1.5)
         })
+        if (scrollY > 500) {
+            document.querySelector("nav").classList.add("scrolled")
+        }
     });
 })(jQuery)
+
+const navLinks = document.querySelectorAll("#nav-list li a")
+const sections = [$('header'), ...document.querySelectorAll('section')]
+navLinks[0].classList.add("selected")
+window.onscroll = _ => {
+    sections.forEach(sec => {
+        let top = window.scrollY + 1
+        let offset = sec.offsetTop
+        let height = sec.offsetHeight
+        let id = sec.id
+
+        if (top >= offset && top < offset + height) {
+            navLinks.forEach(link => {
+                link.classList.remove('selected')
+                document.querySelector(`#nav-list li a[data-href*=${id}`).classList.add('selected')
+            })
+        }
+        // header += main fix
+        if (top < 570) {
+            document.querySelector(`#nav-list li a[data-href*=about`).classList.remove('selected')
+            document.querySelector(`#nav-list li a[data-href*=home`).classList.add('selected')
+        }
+    })
+}

@@ -85,14 +85,14 @@ mixin navBar(logo, linksArr)
                             if link[0].length > 0
                                 | #{link[0]}
                             else
-                                a(data-href=link[0][Object.keys(link[0])]) #{Object.keys(link[0])}
+                                a(data-href=link[0][Object.keys(link[0])] onclick="openURL(this)") #{Object.keys(link[0])}
                             ul.nav-dropdown.hidden
                                 each subLink in link[1]
                                     li
-                                        a(data-href=subLink[Object.keys(subLink)]) #{Object.keys(subLink)}
+                                        a(data-href=subLink[Object.keys(subLink)] onclick="openURL(this)") #{Object.keys(subLink)}
                     else
                         li
-                            a(data-href=link[Object.keys(link)]) #{Object.keys(link)}
+                            a(data-href=link[Object.keys(link)] onclick="openURL(this)") #{Object.keys(link)}
 
 
             //- ... Mobile Burger Menu

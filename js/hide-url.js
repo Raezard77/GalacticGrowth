@@ -5,4 +5,5 @@
 
 const openURL = linkEle => {
     window.open(linkEle.dataset.href, '_self')
+    location.hash = '#' + linkEle.dataset.href
 }
