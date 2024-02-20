@@ -143,10 +143,23 @@ footer {
         $min-width: 100%,
         $height: 20dvh,
         $bg: var(--primary-color),
-        $clr: var(--white-color),
+        $clr: var(--bg-color),
         $padding: 2rem,
         $margin: 0,
         $border: none,
         $b-radius: none
     );
+    @include flex-position;
+    flex-direction: column;
+
+    & *::selection {
+        background-color: var(--accent-color);
+        color: var(--white-color);
+    }
+
+    h2 {
+        text-transform: uppercase;
+        letter-spacing: 1.1px;
+        margin: 5px;
+    }
 }
