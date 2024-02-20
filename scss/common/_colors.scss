@@ -4,13 +4,14 @@
 
 
 :root {
-    --primary-color: rgb(0, 157, 223);
+    --primary-color: rgb(11, 255, 255);
     --secondary-color: #202337;
-    --accent-color: #FF25BE;
+    --accent-color: rgb(173, 19, 211);
 
     --font-color: #fff;
     --bg-color: #0A0B0F;
-    --shadow-color: hsla(198, 100%, 44%, 0.3);
+    --shadow-color: rgba(11, 255, 255, 0.63);
+    --shadow-color-2: rgba(173, 19, 211, 0.774);
 
     --debug-border-color: rgb(218, 26, 26);
 }

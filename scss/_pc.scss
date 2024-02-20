@@ -1,10 +1,23 @@
+// -
+section {
+    transition: height 200ms linear;
+}
+
+section:nth-child(odd) {
+    background-color: var(--black-color);
+}
+
 h1 {
     text-align: center;
 }
 
+
+
+// -
 section#about {
     @include flex-position($x:space-around);
     padding: 40px;
+    padding-top: 8dvh;
 
     #about-txt {
         h2 {
@@ -35,6 +48,96 @@ section#about {
     }
 }
 
+
+
+// -
+section#faq {
+    @include flex-position;
+    // flex-direction: column;
+    position: relative;
+    padding-top: 8dvh;
+
+    h2 {
+        position: absolute;
+        top: 9dvh;
+        color: var(--primary-color);
+        letter-spacing: 2px;
+        font-size: 2.33em;
+        padding-bottom: 30px;
+        border-bottom: 1px solid var(--primary-color);
+    }
+
+    .faq-box{
+        width: 90%;
+    }
+
+    .question, .answer {
+        @include flex-position;
+        margin: 100px;
+        span {
+            max-width: fit-content;
+            // display: inline-flex;
+            position: relative;
+            border-radius: 40px;
+            padding: 24px;
+            text-align: center;
+            font-size: 2em;
+            line-height: 2em;
+        }
+    }
+
+    .question {
+        justify-content: flex-start;
+        span {
+            background: var(--primary-color);
+            filter: brightness(120%);
+            color: var(--bg-color);
+
+            &:after {
+                content: "";
+                width: 0px;
+                height: 0px;
+                position: absolute;
+                
+                border-right: 24px solid var(--primary-color);
+                border-left: 12px solid transparent;
+                border-top: 12px solid var(--primary-color);
+                border-bottom: 20px solid transparent;
+                left: 32px;
+                bottom: -27px;
+            }
+
+            @include box-shadow($blur: 2em);
+        }
+    }
+
+    .answer {
+        justify-content: flex-end;
+        span {
+            background: var(--accent-color);
+
+            &:after {
+                content: "";
+                width: 0px;
+                height: 0px;
+                position: absolute;
+                
+                border-left: 24px solid var(--accent-color);
+                border-right: 12px solid transparent;
+                border-top: 12px solid var(--accent-color);
+                border-bottom: 20px solid transparent;
+                right: 32px;
+                bottom: -27px;
+            }
+
+            @include box-shadow($blur: 2em, $clr:var(--shadow-color-2));
+        }
+    }
+}
+
+
+
+// -
 footer {
     @include box-styles(
         $min-width: 100%,

@@ -1,6 +1,6 @@
 body {
     // NOTE: Essential for RWD debuggin XD
-    min-height: 100dvh;
+    min-height: 100vh;
     min-width: 100vw;
     overflow-x: hidden;
     // ...
@@ -13,7 +13,7 @@ body {
 
 header {
     // ...
-    height: calc(100dvh - #{$nav-height});
+    height: 100dvh;
     width: 100%;
     // ...
     position: relative;
@@ -23,21 +23,21 @@ header {
 
 main {
     // ...
-    height: 92vh;
+    height: 100dvh;
     width: 100%;
     // ...
     padding: var(--sec-padding);
     @include flex-position;
 
     h1 {
-        margin-top: 8vh;
+        margin-top: 8dvh;
     }
 }
 
 section {
     @include box-styles(
         $min-width: 100%,
-        $height: calc(100dvh - #{$nav-height}),
+        $height: 100vh,
         $bg: var(--bg-color),
         $clr: var(--font-color),
         $padding: 2rem,

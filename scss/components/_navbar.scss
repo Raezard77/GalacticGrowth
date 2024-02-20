@@ -1,14 +1,15 @@
 header {
     max-width: 100%;
-    height: 100vh;
+    height: 100dvh;
     position: relative;
     @include ele-bg($url: "https://w.wallhaven.cc/full/48/wallhaven-48e67o.jpg");
 
     nav {
+        z-index: 999;
         width: 100%;
         margin: 0 auto;  // @float-approach << centering
         // @include box-shadow;
-        height: 8vh;  // fixed-size!
+        height: 8dvh;  // fixed-size!
         // how to reserve place for fixed-positioned elements
             position: fixed;
             top: 0;
@@ -21,7 +22,7 @@ header {
                 padding-left: 20px;
                 float: left;
             // ?
-                line-height: 8vh;  // fixed-size! - nav height
+                line-height: 8dvh;  // fixed-size! - nav height
                 text-transform: uppercase;
                 font-size: 1.4em; // fixed-size!
                 font-weight: bold;
@@ -43,7 +44,7 @@ header {
                             display: block;
                         // fixed-size! - ?
                             padding: 10px 20px 0 20px;
-                            line-height: 6.7vh;
+                            line-height: 6.7dvh;
                         color: var(--white-color);
                         font-weight: bold;
 
