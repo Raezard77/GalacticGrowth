@@ -14,6 +14,28 @@ h1 {
 
 
 // -
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(100%);
+    transition: all 1s;
+}
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+    transition: all 1s;
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
+
+
+// -
 section#about {
     @include flex-position($x:space-around);
     padding: 40px;
@@ -23,7 +45,6 @@ section#about {
         h2 {
             color: var(--primary-color);
             letter-spacing: 2px;
-            font-size: 2em;
             margin-bottom: 25px;
             border-bottom: 1px solid var(--primary-color);
             padding-bottom: 25px;

@@ -22,27 +22,27 @@ html(lang="en" data-theme="light")
         header#home
             +navBar(brandName, linksArr)
             main
-                h1 !{heroTitle}
+                h1.hidden !{heroTitle}
         section#about
-            #about-txt
+            #about-txt.hidden
                 h2 !{aboutTitle}
                 +aboutTxt()
-            img#about-img(src="./images/sam-suit.jpg", alt="SAM'S PIC")
+            img#about-img.hidden(src="./images/sam-suit.jpg", alt="SAM'S PIC")
         section#testimonials
             h2 WIP
         section#services
             h2 WIP
         section#faq
-            h2 F.A.Q
+            h2.hidden F.A.Q
             .faq-box
-                .question #[span !{question}]
+                .question.hidden #[span !{question}]
                 //- br
-                .answer #[span !{answer}]
+                .answer.hidden #[span !{answer}]
         section#call
             h2 WIP
         footer
-            h2 !{brandName}
-            h4 Copyright &copy;#[span#year] All rights reserved
+            h2.hidden !{brandName}
+            h4.hidden Copyright &copy;#[span#year] All rights reserved
 
 
         //- ...
