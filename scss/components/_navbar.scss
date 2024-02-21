@@ -14,7 +14,8 @@ header {
             position: fixed;
             top: 0;
             left: 0;
-        background: transparent;
+        // background: transparent;
+        @include ele-bg($url: "https://w.wallhaven.cc/full/48/wallhaven-48e67o.jpg");
 
         #logo-container {
             // @float-approach
@@ -55,11 +56,11 @@ header {
                             position: absolute;
                             background-color: var(--primary-color);
                             width: 0%;
-                            bottom: 0px;
+                            bottom: -5px;
                         }
 
                         &:hover::before{
-                            width: 70%;
+                            width: 75%;
                         }
                         &:not(:only-child):after {
                             padding-left: 4px;
@@ -82,9 +83,9 @@ header {
                                     padding: 15px;
                                     line-height: 20px;
 
-                                &:hover::before{
-                                    width: 85%;
-                                }
+                                // &:hover::before{
+                                //     width: 85%;
+                                // }
                             }
                         }
                     }
@@ -145,11 +146,6 @@ header {
     }
 }
 
-.scrolled {
-    @include ele-bg($url: "https://w.wallhaven.cc/full/48/wallhaven-48e67o.jpg");
-    transition: all 200ms linear;
-}
-
 .selected {
     color: var(--primary-color) !important
 }
@@ -160,18 +156,22 @@ header {
 // the nav shows the bi-screens way
 @media all and (min-width: $mq-max-width) {
     #nav-list {
-        display: block !important;
+        display: flex !important;
     }
 }
 
 @media all and (max-width: $mq-max-width) {
     header nav #nav-container {
         width: 100%;  // <>
-        padding: 70px 0 15px;  // fixed-size!
+        padding: 8vh 0 15px;  // fixed-size!
         ul {
             display: none;
-            background-color: #0A0B0F;
-            
+            flex-direction: column;
+            justify-content: space-around;
+
+
+            @include ele-bg($url: "https://w.wallhaven.cc/full/48/wallhaven-48e67o.jpg");
+            height: 92vh;
             li {
                 float: none;  // <>
 
@@ -185,7 +185,7 @@ header {
                         line-height: 20px;
 
                         &:hover::before{
-                            width: 20%;
+                            width: 90%;
                         }
                 }
 

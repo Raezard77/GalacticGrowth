@@ -10,6 +10,11 @@
         })
         $("#burger-menu").click(function () {
             $("nav ul").slideToggle()
+            document.querySelector("nav ul").style.display = "flex"
+        })
+        $("nav ul li a").on("click", function () {
+            $("nav ul").slideToggle()
+            document.querySelector("#burger-menu").classList.toggle("active")
         })
         $("#burger-menu").on("click", function () {
             this.classList.toggle("active")
@@ -18,9 +23,6 @@
             $("nav").toggleClass("scrolled", $(this).scrollTop() > 500)
             // $("header").height() - ($("header").height() / 1.5)
         })
-        if (scrollY > 500) {
-            document.querySelector("nav").classList.add("scrolled")
-        }
     });
 })(jQuery)
 
