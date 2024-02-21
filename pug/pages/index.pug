@@ -30,19 +30,27 @@ html(lang="en" data-theme="light")
             img#about-img.hidden(src="./images/sam-suit.jpg", alt="SAM'S PIC")
         section#testimonials
             h2 WIP
-        section#services
-            h2 WIP
-        section#faq
-            h2.hidden F.A.Q
+        section#services.titled-section
+            h2.section-title.hidden Services
+            .services-container
+                each service in services
+                    .service-bx(style="--clr:"+service.clr)
+                        .service
+                            .icon-box
+                                +#{service.icon}()
+                            h3.hidden !{service.title}
+                            p.hidden !{service.txt}
+                            //- a.hidden(data-href="#call" onclick="openURL(this)") learn more
+        section#faq.titled-section
+            h2.section-title.hidden F.A.Q
             .faq-box
                 .question.hidden #[span !{question}]
-                //- br
                 .answer.hidden #[span !{answer}]
         section#call
             h2 WIP
         footer
-            h2.hidden !{brandName}
-            h4.hidden Copyright &copy;#[span#year] All rights reserved
+            h2 !{brandName}
+            h4 Copyright &copy;#[span#year] All rights reserved
 
 
         //- ...

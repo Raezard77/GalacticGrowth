@@ -11,6 +11,21 @@ h1 {
     text-align: center;
 }
 
+.titled-section {
+    @include flex-position($dir:column)
+}
+.section-title {
+    margin: 0dvh 0 8dvh 0;
+    
+    color: var(--primary-color);
+    letter-spacing: 4px;
+    font-size: 2.33em;
+    text-transform: uppercase;
+
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--primary-color);
+}
+
 
 
 // -
@@ -72,22 +87,140 @@ section#about {
 
 
 // -
-section#faq {
-    @include flex-position;
-    // flex-direction: column;
-    position: relative;
-    padding-top: 8dvh;
+section#services {
+    --clr: violet;
+    --transition: 0.5s ease-in-out;
+    // cards aboslute height quick fix
+        height: auto;
+        padding: 100px;
 
-    h2 {
-        position: absolute;
-        top: 9dvh;
-        color: var(--primary-color);
-        letter-spacing: 2px;
-        font-size: 2.33em;
-        padding-bottom: 30px;
-        border-bottom: 1px solid var(--primary-color);
+    .services-container {
+
+        width: 1350px;
+        height: 70%;
+        
+        @include flex-position($gap:120px);
+        flex-wrap: wrap;
+
+    }
+    
+    .service-bx {
+        width: 330px;
+        position: relative;
+        height: 375px;
+        z-index: 1;
+        @include box-shadow(
+            $h:16px,
+            $v:10px,
+            $blur: 44px,
+            $spread: -10px,
+            $clr: var(--clr)
+        );
+        &::before,
+        &:after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            transition: var(--transition);
+        }
+
+        &::before {
+            inset: -10px 50px;
+            border-top: 4px solid var(--clr);
+            transform: skewY(15deg);
+            border-bottom: 4px solid var(--clr);
+        }
+        &:hover::before {
+            inset: -10px 40px;
+            transform: skewY(0deg);
+        }
+
+        &::after {
+            inset: 60px -10px;
+            border-left: 4px solid var(--clr);
+            transform: skew(15deg);
+            border-right: 4px solid var(--clr);
+        }
+        &:hover::after {
+            inset: 40px -10px;
+            transform: skew(0deg);
+        }
+
+        .service .icon-box {
+            box-shadow: 0 0 0 6px var(--clr);
+            background-color: var(--black-color);
+            svg path{
+                fill: var(--clr);
+            }
+        }
+        &:hover .service .icon-box {
+            box-shadow: 0 0 0 6px var(--black-color), 0 0 0 300px var(--clr);
+            background-color: var(--clr);
+            svg path{
+                fill: var(--black-color);
+            }
+        }
     }
 
+    .service {
+
+        width: 100%;
+        height: 100%;
+        @include flex-position($dir:column, $gap:25px);
+        text-align: center;
+        padding: 0 40px;
+        overflow: hidden;
+        
+        background: var(--black-color);
+        transition: var(--transition);
+
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            transition: var(--transition);
+        }
+        .icon-div {
+            width: 100%;
+            height: 100%;
+            @include flex-position;
+            background-color: transparent;
+        }
+
+        h3, span.highlight {
+            color: var(--clr);
+        }
+
+        p {
+            font-size: 1.1em;
+        }
+    }
+
+    a {
+        background-color: var(--clr);
+        color: var(--black-color);
+        padding: 5px;
+        border-radius: 10px;
+        font-family: monospace;
+    }
+    
+    h3, span.highlight, p {
+        transition: var(--transition);
+    }
+
+    .service:hover h3,
+    .service:hover span.highlight {
+        color: var(--black-color);
+    }
+
+    .service:hover p {
+        color: var(--secondary-color);
+    }
+}
+
+
+
+// -
+section#faq {
     .faq-box{
         width: 90%;
     }
@@ -170,8 +303,7 @@ footer {
         $border: none,
         $b-radius: none
     );
-    @include flex-position;
-    flex-direction: column;
+    @include flex-position($dir:column);
 
     & *::selection {
         background-color: var(--accent-color);
