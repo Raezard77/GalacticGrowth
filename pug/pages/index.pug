@@ -25,11 +25,11 @@ html(lang="en" data-theme="light")
                 h1.hidden !{heroTitle}
         section#about
             #about-txt.hidden
-                h2 !{aboutTitle}
+                h2 ABOUT SAM
                 +aboutTxt()
             img#about-img.hidden(src="./images/sam-suit.jpg", alt="SAM'S PIC")
-        section#testimonials
-            h2 WIP
+        section#testimonials.titled-section
+            h2.section-title.hidden Testimonials
         section#services.titled-section
             h2.section-title.hidden Services
             .services-container
@@ -46,8 +46,12 @@ html(lang="en" data-theme="light")
             .faq-box
                 .question.hidden #[span !{question}]
                 .answer.hidden #[span !{answer}]
-        section#call
-            h2 WIP
+        section#call.titled-section
+            h2.section-title.hidden Book A Call
+            .call-desc-box
+                //- .call-desc
+                //-     +#{callDesc}()
+                .calendly-inline-widget(data-url='https://calendly.com/wrotebysam/discovery-call-1' style='min-width:320px;height:700px;')
         footer
             h2 !{brandName}
             h4 Copyright &copy;#[span#year] All rights reserved
@@ -57,3 +61,6 @@ html(lang="en" data-theme="light")
         +loadScripts()
         script
             | document.querySelector('#year').textContent = new Date().getUTCFullYear()
+        //- Calendly
+        script(src='https://assets.calendly.com/assets/external/widget.js' async='')
+        //- script(src='./js/cal-styling.js')

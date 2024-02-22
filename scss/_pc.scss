@@ -32,7 +32,7 @@ h1 {
 .hidden {
     opacity: 0;
     filter: blur(5px);
-    transform: translateY(100%);
+    transform: translateY(50%);
     transition: all 1s;
 }
 .show {
@@ -286,6 +286,17 @@ section#faq {
 
             @include box-shadow($blur: 2em, $clr:var(--shadow-color-2));
         }
+    }
+}
+
+
+
+// -
+section#call {
+    .call-desc-box {
+        width: 80%;
+        height: auto;
+        filter: invert(100%) hue-rotate(145deg);
     }
 }
 
