@@ -16,13 +16,14 @@ h1 {
 }
 .section-title {
     margin: 0dvh 0 8dvh 0;
+    padding-bottom: 30px;
     
     color: var(--primary-color);
     letter-spacing: 4px;
     font-size: 2.33em;
+        // font-size: clamp(2rem, 4vw, 2.6rem);
     text-transform: uppercase;
 
-    padding-bottom: 30px;
     border-bottom: 1px solid var(--primary-color);
 }
 
@@ -81,6 +82,99 @@ section#about {
         width: 30%;
         border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
         animation: morphing 10s infinite;
+    }
+}
+
+
+
+// -
+section#testimonials {
+    .slide-container {
+        width: 70%;
+        height: 70%;
+    }
+
+    .slider {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .slide-row {
+        width: calc(var(--slides-num) * 100%);
+        height: 90%;
+        transition: 0.5s;
+        display: flex;  // TODO: Remove
+    }
+    
+    .slide-col {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .hero {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        height: 100%;
+        width: 35%;
+    }
+    
+    .hero img {
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+        pointer-events: none;  // prevents downloading pics XD
+        user-select: none;
+    }
+    
+    .content {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 75%;
+        height: 270px;
+        
+        color: var(--bg-color);
+        background: rgba(255, 255, 255, 0.7);
+        
+        backdrop-filter: blur(4.5px);
+        border-radius: 10px;
+        padding: 45px;
+        z-index: 2;
+        user-select: none;
+
+        @include flex-position($dir:column,$x:space-between, $y:flex-start);
+    }
+    
+    .content p {
+        line-height: 1.3;
+        font-size: 1.3em;
+    }
+    
+    .indicator {
+        display: flex;
+        justify-content: center;
+        margin-top: 6rem;
+    }
+    
+    .indicator .btn {
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        margin: 4px;
+        border-radius: 15px;
+        background: var(--primary-color);
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+    }
+    
+    .btn.active {
+        width: 30px;
     }
 }
 
@@ -315,11 +409,7 @@ footer {
         $b-radius: none
     );
     @include flex-position($dir:column);
-
-    & *::selection {
-        background-color: var(--accent-color);
-        color: var(--white-color);
-    }
+    user-select: none;
 
     h2 {
         text-transform: uppercase;

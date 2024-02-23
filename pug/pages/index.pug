@@ -30,6 +30,22 @@ html(lang="en" data-theme="light")
             img#about-img.hidden(src="./images/sam-suit.jpg", alt="SAM'S PIC")
         section#testimonials.titled-section
             h2.section-title.hidden Testimonials
+            .slide-container
+                .slider
+                    .slide-row.hidden(style="--slides-num:"+slides.length)
+                        each slide in slides
+                            .slide-col
+                                .content
+                                    p !{slide.testimonial}
+                                    h3 !{slide.uname}
+                                .hero
+                                    img(src="./images/avatars/"+slide.image+".avif", alt="avatar")
+                    .indicator
+                        each slide, index in slides
+                            if index == 0
+                                span.btn.active
+                            else
+                                span.btn
         section#services.titled-section
             h2.section-title.hidden Services
             .services-container
