@@ -73,6 +73,11 @@ section#about {
         
         address {
             color: var(--primary-color);
+
+            &::selection {
+                color: var(--bg-color);
+                background: var(--primary-color);
+            }
         }
 
         width: 40%;
@@ -159,7 +164,7 @@ section#testimonials {
     .indicator {
         display: flex;
         justify-content: center;
-        margin-top: 6rem;
+        margin-top: 4rem;
     }
     
     .indicator .btn {
