@@ -1,6 +1,5 @@
 header {
     max-width: 100%;
-    height: 100dvh;
     position: relative;
     @include ele-bg($url: "https://w.wallhaven.cc/full/48/wallhaven-48e67o.jpg");
 
@@ -9,7 +8,6 @@ header {
         width: 100%;
         margin: 0 auto;  // @float-approach << centering
         // @include box-shadow;
-        height: 8dvh;  // fixed-size!
         // how to reserve place for fixed-positioned elements
             position: fixed;
             top: 0;
